@@ -1,0 +1,134 @@
+<html>
+<head>
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>choice</title>
+        <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+        <meta charset="utf-8">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="Features-Blue.css" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Courgette&display=swap" rel="stylesheet">
+        <style>
+
+.flipContainer {
+  width: 250px;
+  height: 500px;
+  position: relative;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+
+.card {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card div {
+  display: block;
+  height: 500px;
+  width: 250px;
+  line-height: 200px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: red;
+}
+
+.card .back {
+  background: blue;
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}</style></head>
+<body>
+<div class="row">
+
+                <div class="w3-card-4" style="width:100%;height:25px">
+
+                    <header class="w3-container w3-orange"style="text-align=center;">
+                        <h3>Alternative materials<i class="fa fa-info-circle t1" style="font-size:24px color:white"></i></h3>
+                    </header>
+                    <img src="images/c1.jpg" alt="" width="250" height="150">
+                    <div class="w3-container">
+                        <p style="color:black;"><b>Have you tried out different possible materials and thought about implications at various stages during the life cycle of a clothing product?
+                        </b><br><br></p>
+                    </div>
+                    <footer class="w3-container w3-white">
+                        <button class="w3-button w3-block w3-orange addtoideaboard">Add to ideaboard</button></footer>
+                </div>
+            </div>
+            <div class="back">hi</div>
+        </div>
+
+    </section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click">+</button>
+            <div class="front">Custom Installation</div>
+            <div class="back">Custom Installation details</div>
+        </div>
+
+    </section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click">+</button>
+            <div class="front">Custom Installation</div>
+            <div class="back">Custom Installation details</div>
+        </div>
+
+    </section>
+
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click">+</button>
+            <div class="front">Custom Installation</div>
+            <div class="back">Custom Installation details</div>
+        </div>
+    </section>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('.js-click').on('click', function() {
+  $(this).parent('.card').toggleClass('flipped');
+});</script>
+</body>
+</html>

@@ -1,0 +1,562 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>persuasion</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Features-Blue.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Courgette&display=swap" rel="stylesheet">
+    <style>
+    body{
+     background: linear-gradient(to top left, #336699 0%, #00ff99 98%);
+     background-image:url('b3.jpg');
+     background-repeat:no-repeat;
+     background-size:cover;
+    }
+ .container{
+		width: 100%;
+		padding: -25px;
+		margin: -50px auto;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.flipContainer {
+  width: 250px;
+  height: 500px;
+  position: relative;
+ margin: 0px 10px 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 1600px;
+}
+
+.card {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card div {
+  display: block;
+  height: 500px;
+  width: 250px;
+
+  color:black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: white;
+}
+
+.card .back {
+  background: white;
+
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+	.box:hover{
+		transform: scale(1.1);
+		background: white;
+		/*z-index: 2;*/
+		box-shadow: 2px 2px 2px #000;
+    }
+
+	h3 {
+	color:white;
+	font-size:20px;
+	font-family: 'Lemonada', cursive;
+	}
+	.back:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.pagination a {
+  color: white;
+  float: left;
+  margin-top:200%;
+  padding: 8px 16px;
+  font-size:72px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px  #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: black;}
+.tab {
+       display:inline-block;
+       margin-left: 1381px;
+}
+
+.b1{
+  display: inline-block;
+  border-radius: 35px;
+
+  background: pink;
+
+  border: none;
+  color: light-yellow;
+  text-align: center;
+  font-size: 38px;
+  padding: 20px;
+  width: 220px;
+  height:50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.b1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.b1:hover span {
+  padding-right: 25px;
+}
+
+.b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+p{
+font-family: 'Courgette', cursive;
+font-size:17px;
+}
+.t1{
+       display:inline-block;
+       margin-left:92px;
+}
+.t2{
+       display:inline-block;
+       margin-left:50px;
+
+}
+.t4{
+display:inline-block;
+       margin-left:114px;
+}
+.t3{
+display:inline-block;
+       margin-left:36px;
+}
+.t5{
+    display:inline:block;
+    margin-left:53px;
+}
+.t6{
+display:inline-block;
+       margin-left:35px;
+}
+.t7{
+display:inline-block;
+       margin-left:82px;
+}
+.t8{
+display:inline-block;
+       margin-left:31px;
+
+}
+.t9{
+display:inline-block;
+       margin-left:7px;
+}
+.t10{
+display:inline-block;
+       margin-left:102px;
+}
+.t11{
+display:inline-block;
+       margin-left:57px;
+
+}
+.p1{
+text-align:left;
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+}
+
+</style>
+</head>
+<body>
+<nav><a href="cart.html"><button class="b1" style="vertical-align:middle ;padding-top: 0;padding-bottom: 0;margin-left:80%;margin-top:10px;margin-bottom:3%;font-family: 'Brush Script MT';"><span><b>Idea Board</b></span></button></a></nav>
+<h2 class="text-center" style="font-family: 'Metal Mania', cursive; font-size:75px; color:pink;margin-left:10px;margin-top:-100px;"><b>Persuasion</b></h2>
+
+<br><br>
+<div class="container">
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+            <div class="w3-card-4" style="width:100%;height:25px">
+                <header class="w3-container w3-pink"style="text-align=center;">
+                    <h3>Informative</h3>
+                </header>
+                <img src="images/p1.png" alt="" width="250" height="150">
+                <div class="w3-container">
+                    <p style="color:black;"><b>How can you make more informed choices for producers and consumers?
+                    </b></p>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-pink">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">Education is one of critical elements for facilitating
+                        sustainable fashion design. It is capable to persuade people
+                        to address sustainability issues associated in fashion
+                        design. Fashioning an Ethical Industry (FEI) provides useful
+                        education resources, student workshops in order to promote
+                        sustainability in the industry. FEI works with educators and
+                        students on fashion related courses in order to raise
+                        awareness of a global overview of the fashion industry and
+                        fashion design practices. </p>
+                </div></div>
+        </div></section>
+            <section class="flipContainer">
+                <div class="card">
+                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                    <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-pink">
+                <h3>Guidance</h3>
+            </header>
+            <img src="images/p2.PNG" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design offer the appropriate guidance to the user?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+        </div></div>
+                    <div class="back"> <header class="w3-container w3-pink">
+                        <h3>Description</h3>
+                    </header>
+                        <div class="w3-container">
+                            <p style="color:black;"class="p1">Eco-labels and certification can help inform
+                                guidelines and choices for consumers who want to
+                                buy eco-friendly products. Furthermore, the designer
+                                can provide more product information in the
+                                integrated labels with a garment’s history such as
+                                designer’s intention, life time with garment, material
+                                properties, laundry method, and updatable methods.
+                                For example, the Fair trade Labeling Organisation
+                                (FLO) provides useful information regarding cotton
+                                production processes. </p>
+                        </div></div>
+                </div></section>
+                    <section class="flipContainer">
+                        <div class="card">
+                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-pink">
+                <h3>Story of Use</h3>
+            </header>
+            <img src="images/p3.png" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design scenario promote a more sustainable way of living in the context of their everyday behaviour as a story?</b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+        </div></div>
+                            <div class="back"> <header class="w3-container w3-pink">
+                                <h3>Description</h3>
+                            </header>
+                                <div class="w3-container">
+                                    <p style="color:black;"class="p1">The use of innovative story and awareness-raising
+                                        campaigns enable and encourage people to lead more
+                                        sustainable life stylese.g. Green thing provide unique videos
+                                        and inspiring stories from creative people and community
+                                        members around the world, aiming to inspire people to lead
+                                        a greener life</p>
+                                </div></div>
+                        </div></section>
+                            <section class="flipContainer">
+                                <div class="card">
+                                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                    <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-pink">
+            <h3>Transparency</h3>
+        </header>
+        <img src="images/p4.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you make your design more transparent by
+                revealing under the surface of the design process?
+                Can this be used to influence user’s perceptions and
+                behaviour?</b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+                                    </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-pink">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">
+                                                Transparency is one of the vital aspects to create
+                                                brand loyalty and encouraging sustainable design
+                                                practices. Made-By label is a non-profit organisation
+                                                involved with a fashion brand to show the entire
+                                                production process behind a product including from
+                                                raw materials through to the finished product which
+                                                aims to improve environmental and social conditions
+                                                in the fashion industry. Made-by label encourages
+                                                transparency of supply chain and openness leading to
+                                                more sustainable design practices
+                                            </p>
+                                        </div></div>
+                                </div></section>
+                                    <section class="flipContainer">
+                                        <div class="card">
+                                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-pink">
+                <h3>Warning</h3>
+            </header>
+            <img src="images/p5.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Does your design give information regarding the usage of the garment?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+
+        </div>
+                                            </div>
+                                            <div class="back"> <header class="w3-container w3-pink">
+                                                <h3>Description</h3>
+                                            </header>
+                                                <div class="w3-container">
+                                                    <p style="color:black;"class="p1">Critical reflection on the design process and interactive
+                                                        design process enables people to understand the issue of
+                                                        user’s energy use and take control in their actions. For
+                                                        example, a pollution sensing and visualising garment (CO2-
+                                                        dress) has been designed by collaboration between diffus.</p>
+                                                </div></div>
+                                        </div></section>
+</div>
+
+<div class="pagination">
+    <a href="empowerment.html" style="margin-top:20px;">❮</a>
+    <a class="tab"href="interaction.html" style="margin-top:20px;">❯</a>
+</div>
+<div class="container">
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-pink">
+            <h3>Reinforcement</h3>
+        </header>
+        <img src="images/p6.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you emphasise the new possibility of
+                resources and increase awareness of value of
+                resource use through your design?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-pink">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">Hyun-Jin Jeong explored the potential of earth as a
+                        material for textile design and colouration through
+                        various dyeing and printing experimentations. She
+                        emphasised the alternative possibility for dyeing
+                        colouration and new aesthetic values of natural material
+                        using 45 different soils collected from varied
+                        geographical locations</p>
+                </div></div>
+        </div></section>
+            <section class="flipContainer">
+                <div class="card">
+                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                    <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-pink">
+            <h3>Reward</h3>
+        </header>
+        <img src="images/p7.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you encourage the user to participate in continuous positive action through a series of rewards or incentives when they achieve positive action in your system?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+                    </div>
+                    </div>
+                    <div class="back"> <header class="w3-container w3-pink">
+                        <h3>Description</h3>
+                    </header>
+                        <div class="w3-container">
+                            <p style="color:black;"class="p1">Reward and incentive can instantly motivate people to
+                                adopt pro-environmental behaviours. ‘Fashioning the
+                                Future Awards’ encourage designers to create
+                                innovative sustainable fashion design through engaging
+                                the participation of students and graduates from across
+                                the world.</p>
+                        </div></div>
+                </div></section>
+                    <section class="flipContainer">
+                        <div class="card">
+                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-pink">
+            <h3>Simplicity</h3>
+        </header>
+        <img src="images/p8.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you simplify your design system or service to be easier, so that people’s behaviour can adapt to habitual routine?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+                            </div>
+                            </div>
+                            <div class="back"> <header class="w3-container w3-pink">
+                                <h3>Description</h3>
+                            </header>
+                                <div class="w3-container">
+                                    <p style="color:black;"class="p1">If the design process is simple and easy to adopt, people
+                                        tend to change behaviour more effectively and act over and
+                                        over again in a habitual routine. In pursuing simplicity,
+                                        people have a tendency to stick to their routine (Fogg,
+                                        2009).</p>
+                                </div></div>
+                        </div></section>
+                            <section class="flipContainer">
+                                <div class="card">
+                                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                    <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-pink">
+            <h3>Commitment</h3>
+        </header>
+        <img src="images/p9.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b> How can your design create a dialogue with the
+                user that encourages responsible use of products?
+                How could we actively promote reliable garments?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+    <</div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-pink">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">The Clean Clothes Campaign support and promote the
+                                                fundamental rights of workers in the global garment and
+                                                sportswear industries. They educate consumers, lobby
+                                                companies and governments, and offer direct solidarity
+                                                support to workers as they fight for their rights and demand
+                                                better working conditions</p>
+                                        </div></div>
+                                </div></section>
+                                    <section class="flipContainer">
+                                        <div class="card">
+                                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-pink">
+            <h3>Backer Incentive</h3>
+        </header>
+        <img src="images/p10.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your design promote continuous improvement of shareholder value?</b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-pink">Add to ideaboard</button></footer>
+                                            </div>
+                                            </div>
+                                            <div class="back"> <header class="w3-container w3-pink">
+                                                <h3>Description</h3>
+                                            </header>
+                                                <div class="w3-container">
+                                                    <p style="color:black;"class="p1">
+                                                        Sony and the Solar-bear Foundation made a partnership
+                                                        which aims to encourage consumers to participate in an
+                                                        environmental conservation activity when they buy
+                                                        batteries. A picture book featuring the cubs is available
+                                                        to help parents educate their children about climate
+                                                        change and its effects (cited in WBCSD, 2008)
+                                                    </p>
+                                                </div></div>
+                                        </div></section>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                        <script>
+$('.js-click').on('click', function() {
+  $(this).parent('.card').toggleClass('flipped');
+});</script>
+
+</body>
+</html>
