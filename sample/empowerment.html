@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>empowerment</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Features-Blue.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Courgette&display=swap" rel="stylesheet">
+    <style>
+     body{
+     background: linear-gradient(to top left, #336699 0%, #00ff99 98%);
+     background-image:url('b4.jpg');
+     background-repeat:no-repeat;
+     background-size:cover;
+    }
+ .container{
+		width: 100%;
+		padding: -25px;
+		margin: -50px auto;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.flipContainer {
+  width: 250px;
+  height: 500px;
+  position: relative;
+ margin: 0px 10px 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 1600px;
+}
+
+.card {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card div {
+  display: block;
+  height: 500px;
+  width: 250px;
+
+  color:black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: white;
+}
+
+.card .back {
+  background: white;
+
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+	.box:hover{
+		transform: scale(1.1);
+		background: white;
+		/*z-index: 2;*/
+		box-shadow: 2px 2px 2px #000;
+    }
+
+	h3 {text-align: center;
+	color:white;
+	font-size:20px;
+	font-family: 'Lemonada', cursive;
+	}
+	.back:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.pagination a {
+  color: white;
+  float: left;
+  margin-top:200%;
+  padding: 8px 16px;
+  font-size:72px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px  #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: black;}
+.tab {
+       display:inline-block;
+       margin-left: 1381px;
+}
+
+.b1{
+  display: inline-block;
+  border-radius: 35px;
+
+  background: red;
+
+  border: none;
+  color: light-yellow;
+  text-align: center;
+  font-size: 38px;
+  padding: 20px;
+  width: 220px;
+  height:50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.b1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.b1:hover span {
+  padding-right: 25px;
+}
+
+.b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+p{
+font-family: 'Courgette', cursive;
+font-size:17px;
+}
+.t1{
+       display:inline-block;
+       margin-left:63px;
+}
+.t2{
+       display:inline-block;
+       margin-left:15px;
+
+}
+.t4{
+display:inline-block;
+       margin-left:106px;
+}
+.t3{
+display:inline-block;
+       margin-left:36px;
+}
+.t5{
+    display:inline:block;
+    margin-left:44px;
+}
+.t6{
+display:inline-block;
+       margin-left:35px;
+}
+.t7{
+display:inline-block;
+       margin-left:131px;
+}
+.t8{
+display:inline-block;
+       margin-left:126px;
+
+}
+.t9{
+display:inline-block;
+       margin-left:24px;
+}
+.t10{
+display:inline-block;
+       margin-left:0px;
+}
+.p1{
+text-align:left;
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+}
+
+</style>
+</head>
+<body>
+<nav><a href="cart.html"><button class="b1" style="vertical-align:middle ;padding-top: 0;padding-bottom: 0;margin-left:80%;margin-top:10px;margin-bottom:3%;font-family: 'Brush Script MT';"><span><b>Idea Board</b></span></button></a></nav>
+<h2 class="text-center" style="font-family: 'Metal Mania', cursive; font-size:75px; color:red;margin-left:10px;margin-top:-100px;"><b>Empowerment</b></h2>
+
+<br><br>
+<div class="container">
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+            <div class="w3-card-4" style="width:100%;height:25px">
+                <header class="w3-container w3-red"style="text-align=center;">
+                    <h3>Storytelling</h3>
+                </header>
+                <img src="images/e1.jpg" alt="" width="250" height="150">
+                <div class="w3-container">
+                    <p style="color:black;"><b>How can your design influence multiple people and connect them with their emotions?
+                    </b></p>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">Storytelling allows new discoveries of personal value with a
+                        more empathic experience that leads to emotional attachment
+                        to the user. Marie Ilse Bourlanges explored the idea of
+                        anticipation of the decay through investigation of the human
+                        movement and the relationships between notions of time,
+                        body, skin and clothes and intended to express the broad
+                        semantic of decay. Bourlanges captured the gestures of body
+                        bending and trace of time in the garment which potentially
+                        anticipated eventual decay of the textile and human body
+                        movement of daily life</p>
+                </div></div>
+        </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-red">
+                <h3>Magic</h3>
+            </header>
+            <img src="images/e2.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design evoke a magical experience and curiosity, like marrying traditional design skills with advanced technologies?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">The Magic element in the design process allows numerous
+                        user engagements and experiences; the resultant product
+                        is likely to be emotionally connected to the consumer
+                        (Chapman, 2005). Ezgihan Talay explored the idea of
+                        ‘Movement and Interactivity’ through using Nintendo Wii to
+                        update the experiential marbling art, the outcome of the
+                        movements is translated to the fabrics. This incorporated
+                        new technique allows anyone to easily alter the artwork by
+                        moving white-gloved hands</p>
+                </div></div>
+        </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-red">
+                <h3>Poetic</h3>
+            </header>
+            <img src="images/e3.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design trigger memory as a poetic experience and evoke personal intimacy?</b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">The poetic pattern can promote emotional bonds with the
+                        object which encourages on-going use, enduring values
+                        within products. This poetic element sustains the slow
+                        passing of time and an overall sensitivity to how fabrics
+                        and garments are actually used. Veasyble is a
+                        conceptual set of accessories that transform to create an
+                        intimate world for the wearer at a moment’s notice as
+                        symbolic representations, but contribute to the user’s
+                        experience of the world around them</p>
+                </div></div>
+        </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-red">
+            <h3>Playfulness</h3>
+        </header>
+        <img src="images/e4.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can you maximise playful experiences through visual appearance, usability, service, process, materials etc.?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">Playful experiences provoke curiosity and emotional
+                        attachment with the user. Elisabeth Buecher designed a
+                        series of costumes, ‘Siamese Accessories’ which only
+                        functions if worn by two people at the same time. This
+                        playful experience provides two users to become Siamese
+                        twins and formed new creatures. </p>
+                </div></div>
+        </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-red">
+                <h3>Personality</h3>
+            </header>
+            <img src="images/e5.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can you suggest a platform that allows the user to show facial expressions through the use of their own personal avatar which depend on the user’s personality or characters?</b><br><br></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">Fashion service provides a personalised clothing avatar
+                        and allows any accessory and clothing to be tried on
+                        through a virtual experience. GirlSense Design Studio
+                        allows creation of personalised clothing depending on the
+                        mood. This platform allows the user to show facial
+                        expressions through the use of their own personal avatar. </p>
+                </div></div>
+        </div></section>
+</div>
+
+<div class="pagination">
+    <a href="optimisation.html" style="margin-top:20px;">❮</a>
+    <a class="tab"href="persuasion.html" style="margin-top:20px;">❯</a>
+</div>
+<div class="container">
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-red">
+            <h3>Partial Fruition<i class="fa fa-info-circle t9" style="font-size:24px color:white"></i></h3>
+        </header>
+        <img src="images/e6.jpeg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your design be rearranged in various
+                configurations or semi-finished platforms according
+                to individual needs, so that people could contribute
+                to the design process?
+
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">People are used to having ‘perfect’ looking fashion through
+                        ready-made products. Walker (2006) suggested that partial
+                        completion could encourage people‘s care and maintenance
+                        of our material environment and contributes to product
+                        longevity. Hanna Nyman creates 3D wall papers which give
+                        unique experience and personal user touch in product.</p>
+                </div></div>
+        </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-red">
+            <h3>User as maker</h3>
+        </header>
+        <img src="images/e7.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>
+                Can consumers become co-partners in your design
+                process? Might this encourage more sustainable
+                consumption?
+
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+    </div>
+    </div>
+    <div class="back"> <header class="w3-container w3-red">
+        <h3>Description</h3>
+    </header>
+        <div class="w3-container">
+            <p style="color:black;"class="p1">A widespread DIY (Do it yourself) culture and microproduction gives the opportunity to everyone to become a
+                creator and social actor in design. This movement
+                develops competent individuals who have the potential to
+                produce their clothes or supply skills and resources to
+                others, enabling them to create as well as consume. E.g.)
+                Craft DIY community</p>
+
+        </div>
+    </div>
+</div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-red">
+            <h3>Smart Craft</h3>
+        </header>
+        <img src="images/e8.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you use your design process as an
+                educational and experimental tool in which the
+                user can easily learn to use new technologies and
+                science for their own project?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-red">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1">
+                        Smart craft gives people the opportunity to work with
+                        science and technology in an easy and enjoyable way to
+                        create new ideas. Technologies such as, LilyPad Arduino
+                        encourages active participation with DIY Community.
+                        People can learn and share their knowledge about smart
+                        materials and new technologies for their own fashion
+                        design.
+                    </p>
+                </div></div>
+        </div></section>
+            <section class="flipContainer">
+                <div class="card">
+                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                    <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-red">
+
+            <h3>Unseal Fashion</h3>
+        </header>
+        <img src="images/e9.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can open source support reshaping the
+                meaning of innovation through socially engaged
+                process with a wide range of actors?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+                    </div>
+                    </div>
+                    <div class="back"> <header class="w3-container w3-red">
+                        <h3>Description</h3>
+                    </header>
+                        <div class="w3-container">
+                            <p style="color:black;"class="p1">
+                                Open source fashion has been transformed in craft and
+                                design as social dimensions of activities, derived from digital
+                                technology which opened up a range of new media deliver to
+                                consumers and the creative industries. This shift change
+                                design practices in production and development that
+                                promote access to the end product's source materials.
+                                Growing open source design provides an open digital
+                                designing service for micro-manufacturing.
+                            </p>
+                        </div></div>
+                </div></section>
+                    <section class="flipContainer">
+                        <div class="card">
+                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-red">
+            <h3>Pursue Creativity<i class="fa fa-info-circle t10" style="font-size:24px color:white"></i></h3>
+        </header>
+        <img src="images/e10.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your design system provide a way to become more creative and get inspired to create?</b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-red">Add to ideaboard</button></footer>
+                            </div>
+                            </div>
+                            <div class="back"> <header class="w3-container w3-red">
+                                <h3>Description</h3>
+                            </header>
+                                <div class="w3-container">
+                                    <p style="color:black;"class="p1">Studio Ludens help anyone explore their own creativity
+                                        through providing the digital design tool. Their aim is to
+                                        serve people the creative freedom and promoting the use
+                                        and re-use of customised design. The online tool enables
+                                        people to get involved with some 2D geometry to CAD
+                                        programming which is then applied to laser-cutting, fabric
+                                        printing, and weaving.</p>
+                                </div></div>
+                        </div></section>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('.js-click').on('click', function() {
+  $(this).parent('.card').toggleClass('flipped');
+});</script>
+
+</body>
+</html>

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>optimisation</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Features-Blue.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Courgette&display=swap" rel="stylesheet">
+    <style>
+    body{
+     background: linear-gradient(to top left, #336699 0%, #00ff99 98%);
+     background-image:url('b1.png');
+     background-repeat:no-repeat;
+     background-size:cover;
+    }
+ .container{
+		width: 100%;
+		padding: -25px;
+		margin: -50px auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		perspective: 1600px;
+	}
+	.flipContainer {
+  width: 250px;
+  height: 500px;
+  position: relative;
+ margin: 0px 10px 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 1600px;
+}
+
+.card {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card div {
+  display: block;
+  height: 500px;
+  width: 250px;
+
+  color:black;
+
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: white;
+}
+
+.card .back {
+  background: white;
+
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+
+	/*.card:hover{
+		transform: scale(1.1);
+		background: white;
+		z-index: 2;
+		card-shadow: 2px 2px 2px #000;
+    }*/
+
+	h3
+	{
+	color:white;
+	font-size:20px;
+	font-family: 'Lemonada', cursive;
+	}
+	/*.back:hover {
+    background-color: #ddd;
+    color: black;
+    }*/
+
+
+.pagination a {
+  color: white;
+  float: left;
+  margin-top:200%;
+  padding: 8px 16px;
+  font-size:72px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px  #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: black;}
+.tab {
+       display:inline-block;
+       margin-left: 1381px;
+}
+.t1{
+ display:inline-block;
+       margin-left: 0px;
+       margin-bottom:0px;
+
+}
+
+.b1{
+  display: inline-block;
+  border-radius: 35px;
+  background: orange;
+  border: none;
+  color: light-yellow;
+  text-align: center;
+  font-size: 38px;
+  padding: 20px;
+  width: 220px;
+  height:50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.b1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.b1:hover span {
+  padding-right: 25px;
+}
+
+.b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+p{
+font-family: 'Courgette', cursive;
+font-size:17px;
+}
+.p1{
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+}
+
+
+</style>
+
+</head>
+<body>
+<nav><a href="cart.html"><button class="b1" style="vertical-align:middle ;padding-top: 0;padding-bottom: 0;margin-left:80%;margin-top:10px;margin-bottom:3%;font-family: 'Brush Script MT';"><span><b>Idea Board</b></span></button></a></nav>
+<h2 class="text-center" style="font-family: 'Metal Mania', cursive; font-size:75px; color:green;margin-left:10px;margin-top:-100px;"><b>Optimisation</b></h2>
+
+<br><br>
+<div class="container">
+<section class="flipContainer">
+    <div class="card">
+        <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+        <div class="front">
+            <div class="w3-card-4" style="width:100%;height:25px">
+                <header class="w3-container w3-green">
+                    <h3>Rethink Grit</h3>
+                </header>
+                <img src="images/o1.jpg" alt="" width="250" height="150">
+                <div class="w3-container">
+                    <p style="color:black;"><b>Can the use of durable materials support the sustainability of long-lived garments?
+                    </b></p>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+            </div>
+    </div>
+        <div class="back"> <header class="w3-container w3-green">
+            <h3>Description</h3>
+        </header>
+            <div class="w3-container">
+                <p style="color:black;"class="p1">Fashion product life has become extremely short and
+                    people often discard clothing because they are tired of
+                    existing clothing or it is out of fashion. Helen Storey (2008)
+                    designed disposable short life clothing through suggesting
+                    the wider issues of sustainability and ethical living.
+                </p>
+            </div></div>
+    </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-green">
+                <h3>Biomimicry</h3>
+            </header>
+            <img src="images/o2.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>How could you apply biomimicry to make fashion and textiles products as sustainable as natural systems?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+        </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">Benyus (2002) suggests that looking to nature could solve
+                                                human problems and contribute great 'levels of innovation’.
+                                                The main idea of biomimicry is to understand nature’s
+                                                biological principles and apply problem solving ideas to
+                                                develop innovative new materials, production processes and
+                                                design systems.
+                                            </p>
+                                        </div></div>
+                                </div></section>
+
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-green">
+                <h3>Cradle to Cradle</h3>
+            </header>
+            <img src="images/o3.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can you optimize product design to maximize reusability?</b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+        </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">Adapting metabolism concepts, ‘Cradle to Cradle’
+                                                (McDonough and Braungart , 2002) suggest a whole
+                                                system view of design which extends product life beyond a
+                                                first life into the next cycle of life where waste is
+                                                reconceived as a useful and valuable component of
+                                                another product’s future life. A biological nutrient can be
+                                                designed to return to the biological cycle and can be safely
+                                                biodegradable. A technical nutrient is a product designed to
+                                                go back into the technical cycle; for example it may be
+                                                disassembled and the parts re-used.
+                                            </p>
+                                        </div></div>
+                                </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+    <div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-green">
+            <h3>Modularity</h3>
+        </header>
+        <img src="images/o4.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Is your product moveable and adaptable? Can it be disassembled by the user? If so, how does it promotes sustainability?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+    </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">Modular systems embrace the concept of “minimum
+                                                inventory and maximum diversity”. Modular pieces can be
+                                                combined or taken apart at the will of the user, allowing
+                                                the product to be co-created by designer and consumer
+                                                as part of a unique experience. The design practice could
+                                                encourage the end-user to participate in design process
+                                                through a flexible approach to creation. E.g.) Eunsuk
+                                                Hur ‘s Transformative modular textiles.
+                                            </p>
+                                        </div></div>
+                                </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-green">
+                <h3>Merging</h3>
+            </header>
+            <img src="images/o5.png" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your project decrease the flow of production
+                    and increase consumer interaction with your
+                    design? Can you skip similar parts of production
+                    process and share similar characteristics?</b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+        </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">
+                                                Merging similar processes or parts to perform parallel
+                                                operations through adaption of technologies and innovative
+                                                thinking can help to decrease the production flow and
+                                                garment waste. E.g.Constructible clothes.
+                                            </p>
+                                        </div></div>
+                                </div></section>
+</div>
+
+<div class="pagination">
+    <a href="choice.html" style="margin-top:20px;">❮</a>
+    <a class="tab"href="empowerment.html" style="margin-top:20px;">❯</a>
+</div>
+<div class="container">
+
+    <section class="flipContainer">
+            <div class="card">
+                <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-green">
+            <h3>Zero-waste </h3>
+        </header>
+        <img src="images/o6.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can you eliminate fabric waste during pattern making and create environmental and economic benefit?
+            </b>  </p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+                </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">The creation of fabric waste resides within fashion design
+                                                and patternmaking, which generates 10 to 20 percent of
+                                                fabric scrap (Rissanen, 2008). Mark Liu (2007) suggested
+                                                Zero waste fashion through designing the garment pattern
+                                                and the printed textile simultaneously; hence the entire
+                                                textile piece becomes the dress without creating fabric
+                                                waste. There are still issues regarding clothing size and
+                                                limited styles.
+                                            </p>
+                                        </div></div>
+                                </div></section>
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+    <div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-green">
+            <h3>Vital Upgrade</h3>
+        </header>
+        <img src="images/o7.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can you provide dynamic upgradable fashion to the user, so that consumers can upcycle multiple times?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+    </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">If a designer provides a dynamic upgradable system, the
+                                                consumer could buy fewer quality garments with the
+                                                expectation of upgrading and refashioning them over again
+                                                rather than buying new clothing.
+
+                                            </p>
+                                        </div></div>
+                                </div></section>
+<section class="flipContainer">
+    <div class="card">
+        <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+        <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-green">
+            <h3>Multi Fashion</h3>
+        </header>
+        <img src="images/o8.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you make a multifunctional apparel design or fashion system so people can use it for a different purpose, or produce an alternative product?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+        </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">Transformative multi- functional clothing can be one of the
+                                                tools to trigger emotional attachment over an extended
+                                                period of time. This emotional response could be extended
+                                                from one occasion to various others beyond conventional
+                                                rules of style</p>
+                                        </div></div>
+                                </div></section>
+        <section class="flipContainer">
+            <div class="card">
+                <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-green">
+            <h3>Update System </h3>
+        </header>
+        <img src="images/o9.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your designed product allows the user to make continuous process improvements through up-cycling?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+                </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-green">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1">Designers can encourage the user to rethink how they
+                                                can mend, repair and up cycle with reclaimed garments.
+                                                Earley has been exploring the idea of up cycling textile
+                                                and clothing since 1999 as a digital sketchbook records
+                                                the making and development of the Top 100 projects.
+                                                Her project is practice-based textile and fashion design
+                                                research which divides the 100 shirts into a series of
+                                                refashioning methods. </p>
+                                        </div></div>
+                                </div></section>
+    <section class="flipContainer">
+            <div class="card">
+                <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-green">
+            <h3>Swap & Share </h3>
+        </header>
+        <img src="images/o10.webp" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>What are the potential opportunities to support sustainability in the fashion and textile design through swap & share service design?</b><br><br><br></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-green">Add to ideaboard</button></footer>
+
+                </div>
+                </div> <div class="back"> <header class="w3-container w3-green">
+            <h3>Description</h3>
+        </header>
+            <div class="w3-container">
+                <p style="color:black;"class="p1">Service design can has considerable sustainability
+                potential through providing opportunities to meet needs
+                with fewer resources and less energy. (for example,
+                clothing libraries and clothing swapping services, product
+                to service shifts for classic items–hiring desired fashion
+                items for a short period of time)E.g.keep & share offers
+                quality pieces and versatile products that can be worn in
+                different ways and by different people over their lifetimes.</p>
+            </div></div></div>
+    </section></div><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('.js-click').on('click', function() {
+  $(this).parent('.card').toggleClass('flipped');
+});</script>
+
+</body>
+</html>

@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>interaction</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Features-Blue.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Courgette&display=swap" rel="stylesheet">
+    <style>
+    body{
+     background: linear-gradient(to top left, #336699 0%, #00ff99 98%);
+     background-image:url('b5.jpg');
+     background-repeat:no-repeat;
+     background-size:cover;
+    }
+ .container{
+		width: 100%;
+		padding: -25px;
+		margin: -50px auto;
+
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.flipContainer {
+  width: 250px;
+  height: 500px;
+  position: relative;
+ margin: 0px 10px 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 1600px;
+}
+
+.card {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card div {
+  display: block;
+  height: 500px;
+  width: 250px;
+
+  color:black;
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: white;
+}
+
+.card .back {
+  background: white;
+
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+	.box:hover{
+		transform: scale(1.1);
+		background: white;
+		/*z-index: 2;*/
+		box-shadow: 2px 2px 2px #000;
+    }
+
+	h3 {
+	color:white;
+	font-size:20px;
+	font-family: 'Lemonada', cursive;
+	}
+	.back:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+
+.pagination a {
+  color: white;
+  float: left;
+  margin-top:200%;
+  padding: 8px 16px;
+  font-size:72px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px  #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: black;}
+.tab {
+       display:inline-block;
+       margin-left: 1381px;
+}
+
+.b1{
+  display: inline-block;
+  border-radius: 35px;
+
+  background: purple;
+
+  border: none;
+  color: light-yellow;
+  text-align: center;
+  font-size: 38px;
+  padding: 20px;
+  width: 220px;
+  height:50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.b1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.b1:hover span {
+  padding-right: 25px;
+}
+
+.b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+p{
+font-family: 'Courgette', cursive;
+font-size:17px;
+}
+.t1{
+ display:inline-block;
+       margin-left: 35px;
+}
+.t2{
+ display:inline-block;
+       margin-left: 10px;
+}
+.t3{
+ display:inline-block;
+     margin-left: 26px;
+}
+.t4{
+ display:inline-block;
+     margin-left: 5px;
+}
+.t5{
+display:inline-block;
+     margin-left: 1px;
+}
+.t6{
+display:inline-block;
+     margin-left: 97px;
+}
+.t7{
+display:inline-block;
+     margin-left: 61px;
+}
+.t8{
+display:inline-block;
+     margin-left: 46px;
+}
+.t9{
+display:inline-block;
+     margin-left: 25px;
+
+}
+.t10{
+display:inline-block;
+     margin-left: 16px;
+
+}
+.p1{
+text-align:left;
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+}
+</style>
+
+
+</head>
+<body>
+<nav><a href="cart.html"><button class="b1" style="vertical-align:middle ;padding-top: 0;padding-bottom: 0;margin-left:80%;margin-top:10px;margin-bottom:3%;font-family: 'Brush Script MT';"><span><b>Idea Board</b></span></button></a></nav>
+<h2 class="text-center" style="font-family: 'Metal Mania', cursive; font-size:75px; color:purple;margin-left:10px;margin-top:-100px;"><b>Interaction</b></h2>
+
+<br><br><br>
+
+<div class="container">
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+            <div class="w3-card-4" style="width:100%;height:25px">
+                <header class="w3-container w3-purple"style="text-align=center;">
+                    <h3>Sensory Effect</h3>
+                </header>
+                <img src="images/i1.png" alt="" width="250" height="150">
+                <div class="w3-container">
+                    <p style="color:black;"><b>How can the use of sensory effects (sound, light, smell, etc.) encourage users to interact or behave more positively?
+                    </b></p>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Sensory experiences trigger emotions, sentimentality and
+                       memories for the user and help to reduce cognitive effort
+                       for behavioural change. Jenny Tillotson explored the
+                       multi-sensory enhancement through suggesting the smart
+                       second skin dress which allows the wearer to enter a sixth
+                       dimension by creating a rainbow symphony of aromas. </p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-purple">
+                <h3>Variable Change</h3>
+            </header>
+            <img src="images/i2.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>How can you control user behaviour automatically through design combined with advanced technology?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Changing an object's physical state (e.g. to a gas, liquid, or
+                       solid), changing the degree of flexibility or changing the
+                       temperature. The life-span of ordinary things and everyday
+                       life may be transformed in relation to existent energy
+                       conditions. Kerri Wallace explored idea of the human
+                       motion response incorporating it with thermo-chromic and
+                       liquid crystal heat responsive technology.</p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-purple">
+                <h3>Primary Action</h3>
+            </header>
+            <img src="images/i3.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design protect the users from danger?</b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Preliminary action allows reflective material to respond to
+                       direct light; the patterns redirect the light back, making
+                       wearer more visible at night. Lost Value designed a reflective
+                       scarf that is produced for the urban cyclists or runners. </p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-purple">
+            <h3>Reactive Fashion</h3>
+        </header>
+        <img src="images/i4.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your design automatically respond to user behaviour and outside environmental conditions such as light, movement, touch etc.?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Reactive fashion gives the impression that the clothing is
+                       alive, opening itself to breathe and take in the rays of light.
+                       Fashion designer and Professor Ying Gao is exploring the
+                       concept of transformative & interactive fashion collections
+                       with the environment such as light, movement, wind or touch
+                       using interactive microelectronic technology.</p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-purple">
+                <h3>Fairytale Fashion</h3>
+            </header>
+            <img src="images/i5.jpg" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design provoke curiosity and mutual
+                    discovery through various interactions with
+                    clothing or your design system?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">The magical element in design can help to potentially
+                       deliver a series of future discoveries and the life of an
+                       object is dramatically increased as users remain
+                       captivated in anticipation of the next event (Chapman,
+                       2005). Fairytale Fashion is created by Diana Eng. They
+                       are producing a collection of magical clothing
+                       incorporating science and technology like inflatable,
+                       deployable structures, muscle wire and microcontrollers. </p>
+                </div></div>
+        </div></section>
+</div>
+
+<div class="pagination">
+    <a href="persuasion.html" style="margin-top:20px;">❮</a>
+    <a class="tab"href="social_conversation.html" style="margin-top:20px;">❯</a>
+</div>
+<div class="container">
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-purple">
+            <h3>Tailoring</h3>
+        </header>
+        <img src="images/i6.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your design will be fit for all body types?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Jasmin Schaitl is an artist and a fashion designer who
+                       designed Body-Index-Cloth through exploring the idea of
+                       the relationship between body and cloth. She suggested a
+                       new pattern making technique which is a visually and
+                       logically understandable system. She created a garment
+                       using the calculated parabolic formula which gave a
+                       standard index from which all body types could be tailored</p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-purple">
+            <h3>Notification</h3>
+        </header>
+        <img src="images/i7.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you notify the consumer about your design regularly?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Just-in-time notifications and simulation of actionable
+                       information could support in motivating people to adapt their
+                       action point. For example, Web 3.0 RFID is possible to
+                       track products in real-time and enable actions like logistics
+                       companies being able to sell off spare space on long-haul
+                       shipping through auctions (Forum for the Future and Levi
+                       Strauss & Co, 2010)</p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-purple">
+            <h3>Feed forward</h3>
+        </header>
+        <img src="images/i8.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can you give the user a preview of future scenarios or demonstrate the results of their different actions or choices?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Reviewing the energy feed forward of ‘unsustainable’
+                       products provides an opportunity to influence the users to
+                       make the right decision. STATIC! Suggested various designs
+                       which increase user awareness of how energy is used and
+                       for stimulating changes in energy behaviour. Heat is a form of
+                       energy that is often taken for granted. They designed
+                       disappearing pattern tiles using a thermo-chromic ink that
+                       reacts to heat, fading away to reflect splashes and intensities
+                       of hot-water use.</p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-purple">
+            <h3>Etiquette Views</h3>
+        </header>
+        <img src="images/i9.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can you design to motivate user's behavioural change through playful experiences?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">The use of positive feedback can enhance the social
+                       connectedness. Takkiainen is a jacket for lonely or bored
+                       people who want to interact with other people. The Jacket
+                       helps the wearer to get in contact with others. The materials
+                       used are Velcro strips of different widths. When these
+                       materials touch each other, they grab onto each other. The
+                       lonely user can be happily connected with others .</p>
+                </div></div>
+        </div></section>
+     <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-purple">
+            <h3>Milieu response</h3>
+        </header>
+        <img src="images/i10.PNG" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Can your design communicate with people to encourage them to practice and follow environmental rules?</b><br><br><br><br></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-purple">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-purple">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                   <p style="color:black;"class="p1">Suzanne Goodwin designed clothing collections that
+                       respond to rapidly changing weather patterns. She
+                       emphasised the growing concerns of climate change
+                       through fashion design. The garments are responsive to
+                       the elements of sun, wind and rain. Patterns appear and
+                       disappear depending on weather conditions. The collection
+                       of fashion products offers to increase awareness of
+                       environmental issues and also possesses a pleasure
+                       element</p>
+                </div></div>
+        </div></section>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('.js-click').on('click', function() {
+  $(this).parent('.card').toggleClass('flipped');
+});</script>
+</body>
+</html>

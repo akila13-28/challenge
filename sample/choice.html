@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Choice</title>
+    <meta name="viewport" content ="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="Features-Blue.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@600&family=Courgette&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <style>
+    body{
+     background: linear-gradient(to top left, #336699 0%, #00ff99 98%);
+     background-image:url('b2.jpg');
+     background-repeat:no-repeat;
+     background-size:cover;
+    }
+ .container{
+		width: 100%;
+		padding: -25px;
+		margin: -50px auto;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		perspective: 1600px;
+	}
+	.flipContainer {
+  width: 250px;
+  height: 500px;
+  position: relative;
+ margin: 0px 10px 0px;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 1600px;
+}
+
+.card {
+  width: 250px;
+  height: 500px;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+
+.card div {
+  display: block;
+  height: 500px;
+  width: 250px;
+
+  color:black;
+
+  font-weight: bold;
+  font-size: 12px;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.card .front {
+  background: white;
+}
+
+.card .back {
+  background: white;
+
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+.card.flipped {
+  -webkit-transform: rotateY( 180deg);
+  -moz-transform: rotateY( 180deg);
+  -o-transform: rotateY( 180deg);
+  transform: rotateY( 180deg);
+}
+
+
+	/*.card:hover{
+		transform: scale(1.1);
+		background: white;
+		z-index: 2;
+		card-shadow: 2px 2px 2px #000;
+    }*/
+
+	h3
+	{
+	color:white;
+	font-size:20px;
+	font-family: 'Lemonada', cursive;
+	}
+	/*.back:hover {
+    background-color: #ddd;
+    color: black;
+    }*/
+
+
+.pagination a {
+  color: white;
+  float: left;
+  margin-top:200%;
+  padding: 8px 16px;
+  font-size:72px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px  #ddd;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: black;}
+.tab {
+       display:inline-block;
+       margin-left: 1381px;
+}
+.t1{
+ display:inline-block;
+       margin-left: 0px;
+       margin-bottom:0px;
+
+}
+
+.b1{
+  display: inline-block;
+  border-radius: 35px;
+  background: orange;
+  border: none;
+  color: light-yellow;
+  text-align: center;
+  font-size: 38px;
+  padding: 20px;
+  width: 220px;
+  height:50px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.b1 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.b1 span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.b1:hover span {
+  padding-right: 25px;
+}
+
+.b1:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+p{
+font-family: 'Courgette', cursive;
+font-size:17px;
+}
+.p1{
+font-family: 'Open Sans', sans-serif;
+font-size:15px;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<nav><a href="cart.html">
+    <button class="b1" style="vertical-align:middle ;padding-top: 0;padding-bottom: 0;margin-left:80%;margin-top:10px;margin-bottom:3%;font-family: 'Brush Script MT';">
+        <span><b>Idea Board</b></span></button>
+</a></nav>
+<h2 class="text-center" style="font-family: 'Metal Mania', cursive; font-size:75px; color:orange;margin-left:10px;margin-top:-100px;"><b>Choice</b></h2><br><br>
+<div class="container">
+
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+            <div class="w3-card-4" style="width:100%;height:25px">
+
+                <header class="w3-container w3-orange"style="text-align=center;">
+                    <h3>Alternative materials</h3>
+                </header>
+                <img src="images/c1.jpg" alt="" width="250" height="150">
+                <div class="w3-container">
+                    <p style="color:black;"><b>Have you tried out different possible materials and thought about implications at various stages during the life cycle of a clothing product?
+                    </b></p>
+                </div><br><br><br><br><br><br><br><br><br><br><br><br>
+                <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-orange addtoideaboard">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-orange">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1"><b>Everyday waste can potentially be transformed into
+                        valuable ingredients for your design object or service
+                        system. Fashion designer Emily Crane designed cultivated
+                        couture from everyday cooking ingredients such as
+                        gelatines, kappa carrageenan, agar-agar seaweed, water,
+                        natural flavour extracts, glycerine, food colouring and
+                        lustres. Every day cooking ingredients transform into hightech kitchen couture.
+                    </b></p>
+                </div></div>
+        </div></section>
+
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-orange">
+                <h3>Alternative Energies</h3>
+            </header>
+            <img src="images/c2.png" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can your design minimise energy use in the design process and maximise the life of the garment using alternative energy resources?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+        </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-orange">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1"><b>Sunlight can be a major resource of natural energy for
+                        utilisation. The Zegna designed Eco-tech Solar Jacket,
+                        made from 100% recycled plastic sources and a detachable
+                        solar cell sleeves, can convert sunlight into renewable
+                        energy. It can also keep the body warm and charges the
+                        battery pack that can hold enough electricity to recharge a
+                        cell phone or iPod. This is done with 5 hours of sunlight.
+                    </b></p>
+                </div></div>
+        </div></section>
+        <section class="flipContainer">
+            <div class="card">
+                <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-orange">
+                <h3>Alternative Process </h3>
+            </header>
+            <img src="images/c3.png" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>How can innovative thinking and new technologies help you to rethink materials and process?</b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-orange">Add to ideaboard</button>
+            </footer>
+        </div>
+                </div>
+                <div class="back"> <header class="w3-container w3-orange">
+                    <h3>Description</h3>
+                </header>
+                    <div class="w3-container">
+                        <p style="color:black;"class="p1"><b>Technological innovations and creative thinking can create
+                            new materials that can be grown, cooked or become selfsufficient. Artist Donna Franklin and scientist Gary Cass
+                            explore the idea of growing seamless biosynthetic materials
+                            from cellulose microfibrils; Suzanne Lee has coined the
+                            name ‘bio-couture’ for her clothes grown from microbialcellulose
+                        </b></p>
+                    </div></div>
+            </div></section>    <section class="flipContainer">
+                    <div class="card">
+                        <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                        <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-orange">
+            <h3>Alternative cloth Packaging</h3>
+        </header>
+        <img src="images/c4.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can you design alternative ways of packaging
+                clothing to minimise waste?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+                        </div>
+                        </div>
+                        <div class="back"> <header class="w3-container w3-orange">
+                            <h3>Description</h3>
+                        </header>
+                            <div class="w3-container">
+                                <p style="color:black;"class="p1"><b>Rethinking clothing packages can solve three common
+                                    product design problems at once. Hangerpack suggested a
+                                    clothing package design that provides flexible packaging for
+                                    shipping is easy to recycle at the end of life cycle stage and
+                                    transforms into a reusable object (hanger) in the package.
+                                </b></p>
+                            </div></div>
+                    </div></section>
+                        <section class="flipContainer">
+                            <div class="card">
+                                <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                <div class="front">
+        <div class="w3-card-4" style="width:100%;height:25px">
+            <header class="w3-container w3-orange">
+                <h3>Alternative Distribution</h3>
+            </header>
+            <img src="images/c5.png" alt="" width="250" height="150">
+            <div class="w3-container">
+                <p style="color:black;"><b>Can you design alternative distribution services and systems for the product?
+                </b></p>
+            </div><br><br><br><br><br><br><br><br><br><br><br><br>
+            <footer class="w3-container w3-white">
+                <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+        </div>
+                                </div>
+                                <div class="back"> <header class="w3-container w3-orange">
+                                    <h3>Description</h3>
+                                </header>
+                                    <div class="w3-container">
+                                        <p style="color:black;"class="p1"><b>One of the main criticisms of the circular economic
+                                            approach is that if all the products have to be sent back to
+                                            producers for reuse or remanufacturing, the transportation
+                                            will be considerably increased. Moreover, remanufacturing
+                                            activities often cost more than production of products from
+                                            virgin raw materials.Alternative ways of
+                                            distribution using local supplier and distribution enable you
+                                            to reduce transportation and create jobs for the local
+                                            community.
+                                        </b></p>
+                                    </div></div>
+                            </div></section>
+</div>
+
+<div class="pagination">
+    <a href="sample.html" style="margin-top:20px;">❮</a>
+    <a class="tab"href="optimisation.html" style="margin-top:20px;">❯</a>
+</div>
+<div class="container">
+    <section class="flipContainer">
+        <div class="card">
+            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-orange">
+            <h3>Ways of Buying Sustainably</h3>
+        </header>
+        <img src="images/c6.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can your design enforce sustainable consumption behaviour?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+            </div>
+            </div>
+            <div class="back"> <header class="w3-container w3-orange">
+                <h3>Description</h3>
+            </header>
+                <div class="w3-container">
+                    <p style="color:black;"class="p1"><b>Current consumption patterns are crucial causes of
+                        environmental and social problems and consumer
+                        behaviour is central to society’s impact on the environment
+                        (Jackson, 2005). Considering how and where clothing is
+                        made, who it is made by and rethinking consumption
+                        activities can play a critical role in supporting sustainability.
+                        Designers can also provide effective instructions for
+                        efficient and environmentally friendly use
+                    </b></p>
+                </div></div>
+        </div></section>
+            <section class="flipContainer">
+                <div class="card">
+                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                    <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-orange">
+            <h3>Ways of Wearing Garments </h3>
+        </header>
+        <img src="images/c7.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>Have you suggested alternative uses for your clothing to develop your unique individual look using your existing clothing rather than buying more?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+                    </div>
+                    </div>
+                    <div class="back"> <header class="w3-container w3-orange">
+                        <h3>Description</h3>
+                    </header>
+                        <div class="w3-container">
+                            <p style="color:black;"class="p1"><b>People can have a limited perception about what can be
+                                worn. If a designer makes clothing with a more flexible
+                                approach, people can be encouraged to wear things
+                                differently. Uniform project is a one-year fundraiser for the
+                                education of underprivileged children in India, where they
+                                designed a dress to wear 365 days as an exercise in
+                                sustainable fashion. How creative can you be with how your
+                                piece of clothing can be worn?
+                            </b></p>
+                        </div></div>
+                </div></section>
+                    <section class="flipContainer">
+                        <div class="card">
+                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-orange">
+            <h3>Ways of Maintaining</h3>
+        </header>
+        <img src="images/c8.png" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can you extend the length of clothing life and make the clothing user think of their garments as more valuable?
+            </b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+                            </div>
+                            </div>
+                            <div class="back"> <header class="w3-container w3-orange">
+                                <h3>Description</h3>
+                            </header>
+                                <div class="w3-container">
+                                    <p style="color:black;"class="p1"><b>Exploring new ways of maintaining and manipulating
+                                        existing products can extend product life as well as add
+                                        new value to the product during the design process. Use of
+                                        organic, bio- or renewable materials which are more
+                                        sustainable, means the clothing can be maintained, re-used
+                                        or repaired by users infinitely. It also allows disassembly or
+                                        re-assembly according to users’ mood or accession
+                                    </b></p>
+                                </div></div>
+                        </div></section>
+                            <section class="flipContainer">
+                                <div class="card">
+                                    <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                    <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-orange">
+            <h3>Ways of Washing clothes </h3>
+        </header>
+        <img src="images/c9.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can your design influence positive behaviour in laundering to deal with future water shortages and high energy consumption?
+            </b><br><br><br></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+                                    </div>
+                                    </div>
+                                    <div class="back"> <header class="w3-container w3-orange">
+                                        <h3>Description</h3>
+                                    </header>
+                                        <div class="w3-container">
+                                            <p style="color:black;"class="p1"><b>One of major environmental impact of clothing comes
+                                                from laundering and aftercare during the consumer use
+                                                stage (Cited in Fletcher, 2008). Designers can trigger
+                                                pro-environmental behaviour through suggestion of
+                                                alternative designs including modular or badge type
+                                                and only the dirty part of the garment has to be
+                                                washed. Fletcher proposed the design that is not to
+                                                resist or repel dirt, but to wear it like a badge. She
+                                                documented the response to this idea in a laundry diary
+                                                over six months
+                                            </b></p>
+                                        </div></div>
+                                </div></section>
+                                    <section class="flipContainer">
+                                        <div class="card">
+                                            <button class="js-click"><i class="fa fa-info-circle " style="font-size:24px color:white"></i></button>
+                                            <div class="front"><div class="w3-card-4" style="width:100%;height:25px">
+        <header class="w3-container w3-orange">
+            <h3>Ways of Relinquishment</h3>
+        </header>
+        <img src="images/c10.jpg" alt="" width="250" height="150">
+        <div class="w3-container">
+            <p style="color:black;"><b>How can the impact of clothing disposal be reduced?</b></p>
+        </div><br><br><br><br><br><br><br><br><br><br><br><br>
+        <footer class="w3-container w3-white">
+            <button class="w3-button w3-block w3-orange">Add to ideaboard</button></footer>
+                                            </div>
+                                            </div>
+                                            <div class="back"> <header class="w3-container w3-orange">
+                                                <h3>Description</h3>
+                                            </header>
+                                                <div class="w3-container">
+                                                    <p style="color:black;"class="p1"><b>Only around 15% of disposed clothing and textiles in the
+                                                        UK are collected for reuse and recycling at present. 70% is
+                                                        sent to landfill (60%) or incineration (10%) (Forum for the
+                                                        Future, 2007). When rethinking our clothing disposal
+                                                        behaviour, the designer can suggest different possibilities of
+                                                        disposing methods such as reuse, converting garment for
+                                                        another purpose or making clothes easy to recover for remanufacturing, trading or selling. E.g. Wearable
+                                                        Collections provides a useful solution by collecting clothing
+                                                        for recycling in NYC.
+                                                    </b></p>
+                                                </div></div>
+                                        </div></section>
+</div><br><br><br><br><br><br><br><br><br><br><br><br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+$('.js-click').on('click', function() {
+  $(this).parent('.card').toggleClass('flipped');
+});</script>
+</body>
+</html>
